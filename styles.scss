@@ -1,0 +1,522 @@
+@import "./variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// SecureDaySheet 4.3.1
+// Bootswatch
+
+// Variables ===================================================================
+
+$web-font-path: "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" !default;
+@import url($web-font-path);
+
+//html{position: relative; height: 100%; overflow: hidden;}
+// Navbar ======================================================================
+
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.bg-dark {
+  background-color: $dark !important;
+}
+
+.bg-light {
+  background-color: $gray-200 !important;
+}
+
+.secureDaySheet {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+h2 {
+  color: $primary;
+}
+
+.navigation {
+  &-right {
+    font-size: 20pt;
+    font-weight: bold;
+    color: $primary;
+    text-align: right;
+  }
+  &-left {
+    font-size: 20pt;
+    font-weight: bold;
+    color: $primary;
+    text-align: left;
+  }
+  &-list {
+    font-size: 20pt;
+    font-weight: bold;
+    color: $primary;
+      text-align: right;
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+  &-label {
+    font-size: 18pt;
+    font-weight: 300;
+    color: $primary;
+  }
+}
+
+.navigation-left span {
+  margin-left: 5px
+}
+
+.navigation-right span {
+  margin-right: 5px
+}
+
+.list-nav {
+  font-size: 20pt;
+  font-weight: bold;
+  text-align: right;
+  padding-left: 11px;
+  padding-right: 11px;
+}
+
+.data1 {
+  font-size: 8pt;
+  font-weight: bold;
+  color: $gray-800;
+}
+
+.data2 {
+  font-size: 8pt;
+  font-weight: bold;
+  color: $gray-600;
+}
+
+.navbar {
+  @extend .secureDaySheet;
+  color: $primary;
+
+  &-brand {
+    font-size: 22pt;
+    line-height: 1.75rem;
+    font-weight: bolder;
+    &-img {
+      width: 40px;
+      // filter generated here https://codepen.io/sosuke/pen/Pjoqqp
+      filter: brightness(0) saturate(100%) invert(100%) sepia(93%) saturate(1%) hue-rotate(205deg) brightness(106%) contrast(100%);
+    }
+
+    &-title {
+//      margin-top: .25rem;
+      font-size: 22pt;
+      line-height: 1.75rem;
+      font-weight: bolder;
+      vertical-align: middle;
+      color: $primary;
+      border-image: linear-gradient(
+        to right,
+        $primary 0%,
+        $primary 80%,
+        $dark 100%
+      );
+      border-image-slice: 1;
+      border-top: 0px solid white;
+      border-left: 0px solid white;
+      border-bottom: 4px solid transparent;
+      backface-visibility: hidden;
+
+    }
+  }
+
+  @media (max-width: 414px){
+    .navbar-brand-img{ width: 25px; }
+    .navbar-brand-title {
+      font-size: 14pt;
+      line-height: 1.1rem;
+    }
+  }
+
+  &-name {
+    font-size: 10pt;
+    line-height: 1.0rem;
+    color: $primary;
+  }
+
+  &-form input,
+  &-form .form-control {
+    border: none;
+  }
+}
+
+// Buttons =====================================================================
+
+.btn {
+  @extend .secureDaySheet;
+  font-size: 1rem;
+  text-transform: uppercase;
+
+  &:hover {
+    border-color: transparent;
+  }
+
+  &-success,
+  &-warning {
+    color: $white;
+  }
+}
+
+.btn-primary {
+  &.disabled,
+  &:disabled {
+    background-color: $gray-300;
+  }
+}
+// Typography ==================================================================
+
+// Tables ======================================================================
+
+.table {
+  .thead-dark th {
+    background-color: $dark;
+  }
+}
+
+// Forms =======================================================================
+
+input,
+.form-control {
+  @include box-shadow(none);
+
+  &:focus {
+    @include box-shadow(none);
+  }
+}
+
+.table td,
+.table th {
+  padding: 0.25rem;
+}
+// Navs ========================================================================
+
+.nav-tabs {
+  .nav-link {
+    @extend .secureDaySheet;
+    background-color: $gray-200;
+    border-color: $gray-300;
+  }
+
+  .nav-link,
+  .nav-link:hover,
+  .nav-link:focus {
+    color: $primary;
+  }
+
+  .nav-link.disabled,
+  .nav-link.disabled:hover,
+  .nav-link.disabled:focus {
+    background-color: $gray-200;
+    border-color: $gray-300;
+    color: $nav-link-disabled-color;
+  }
+}
+
+.nav-pills {
+  .nav-link {
+    @extend .secureDaySheet;
+    border: 1px solid transparent;
+    color: $gray-600;
+  }
+
+  .nav-link.active,
+  .nav-link:hover,
+  .nav-link:focus {
+    background-color: $gray-200;
+    border-color: $gray-300;
+  }
+
+  .nav-link.disabled,
+  .nav-link.disabled:hover {
+    background-color: transparent;
+    border-color: transparent;
+    color: $gray-300;
+  }
+}
+
+.breadcrumb {
+  @extend .secureDaySheet;
+  border: 1px solid $gray-300;
+}
+
+.pagination {
+  @extend .secureDaySheet;
+  line-height: 1rem;
+  margin-bottom: 0;
+
+  ul {
+    margin-bottom: 0;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+/deep/ .pagination ul{
+  margin-bottom: 0;
+}
+
+.dropdown-menu {
+  .dropdown-item {
+    @extend .secureDaySheet;
+  }
+}
+
+// Indicators ==================================================================
+
+.alert {
+  color: #fff;
+
+  a,
+  .alert-link {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  &-primary {
+    &,
+    > th,
+    > td {
+      background-color: $primary;
+    }
+  }
+
+  &-secondary {
+    &,
+    > th,
+    > td {
+      background-color: $secondary;
+    }
+  }
+
+  &-success {
+    &,
+    > th,
+    > td {
+      background-color: $success;
+    }
+  }
+
+  &-info {
+    &,
+    > th,
+    > td {
+      background-color: $info;
+    }
+  }
+
+  &-danger {
+    &,
+    > th,
+    > td {
+      background-color: $danger;
+    }
+  }
+
+  &-warning {
+    &,
+    > th,
+    > td {
+      background-color: $warning;
+    }
+  }
+
+  &-dark {
+    &,
+    > th,
+    > td {
+      background-color: $dark;
+    }
+  }
+
+  &-light {
+    &,
+    > th,
+    > td {
+      background-color: $light;
+    }
+  }
+
+  &-light {
+    &,
+    & a:not(.btn),
+    & .alert-link {
+      color: $body-color;
+    }
+  }
+}
+
+.badge {
+  &-success,
+  &-warning {
+    color: $white;
+  }
+}
+
+.tooltip {
+  @extend .secureDaySheet;
+}
+
+.close {
+  color: $gray-300;
+  opacity: 1;
+
+  &:hover {
+    color: darken($gray-300, 20%);
+  }
+}
+
+// Progress bars ===============================================================
+
+// Containers ==================================================================
+.sd-container {
+  @extend .container;
+  @extend .col-12;
+  @extend .col-md-8;
+  @extend .offset-md-2;
+  @extend .col-lg-4;
+  @extend .offset-lg-4;
+  min-height: 83vh;
+}
+
+
+.img-center {
+  height: 98px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+@media (max-width: 800px){
+  .img-center{height: 80px;}
+}
+
+@media (max-width: 480px){
+  .img-center{height:60px;}
+}
+
+@media (max-width: 375px){
+ .img-center{height: 40px;}
+}
+
+.command-img {
+  @extend .img-center;
+  height: 3rem;
+}
+
+.list-img {
+  @extend .img-center;
+  text-align: center;
+  vertical-align: middle;
+  height: 2.5em;
+}
+
+.card-img {
+  @extend .img-center;
+  height: 7em;
+}
+.card-title {
+  margin-bottom: .25rem;
+}
+
+.search {
+  background-color: $light;
+  height: 2.5rem;
+  margin-bottom: .5rem;
+
+  &-input {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.sd-card {
+  @extend .card;
+  border: none;
+}
+
+.table {
+  margin-bottom: .5rem;
+}
+
+.sd-card-body {
+  @extend .card-title;
+  min-height: 75.6vh;
+}
+
+.toggler {
+  display: inline-block;
+  height: 2rem;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+  background-color: $dark;
+  border: none;
+}
+
+.sd-label {
+  @extend .col-12;
+  @extend .secureDaySheet;
+  font-size: 1rem;
+  font-weight: bolder;
+  color: $dark;
+}
+
+.sd-data {
+  @extend .col-12;
+  @extend .secureDaySheet;
+  font-size: 1rem;
+  color: $secondary;
+}
+
+.sd-data-group {
+  @extend .row;
+  @extend .secureDaySheet;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sd-name {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.sd-command-bar {
+  color: $primary;
+  font-size: 14pt;
+  text-align: center;
+}
+
+@media (max-width: 800px){
+  .sd-command-bar{font-size: 12pt;}
+}
+
+@media (max-width: 480px){
+  .sd-command-bar{font-size:10pt;}
+}
+
+@media (max-width: 414px){
+ .sd-command-bar{font-size: 8pt;}
+}
+
+.sd-command-bar .col-3{
+  @extend .col-3;
+  padding-left: 0;
+  padding-right: 0
+}
