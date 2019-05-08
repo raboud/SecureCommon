@@ -1,0 +1,20 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="#">
+      <img class="navbar-brand-img" src="assets/logo.svg" >
+    </a>
+    <div class="navbar-brand-title" href="#">Secure <span style='color: white;'>{{product}}</span></div>
+
+    <ul class="navbar-nav ml-auto navbar-name">
+      <li *ngIf='authenticated' ngbDropdown class="nav-item dropdown">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle text-primary" id="dropdownLogin" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">{{userName}}</a>
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownLogin">
+          <a class="dropdown-item text-primary" routerLinkActive="active" (click)="logout();isActive = true">Logout</a>
+        </div>
+      </li>
+        <img *ngIf='!authenticated' src="assets/Toggle.svg" class="ml-auto toggler" routerLink='login'/>
+    </ul>
+  </nav>
+  </header>
